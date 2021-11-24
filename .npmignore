@@ -5,3 +5,4 @@ cypress/
 .github/
 .vscode/
 docs/
+test-pages/
