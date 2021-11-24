@@ -4,7 +4,7 @@ const selector = "[data-testId='integer-input']"
 
 describe('integer-input', () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit('/test-pages/integer-input.html')
   })
 
   it('starts with a value of zero', () => {
