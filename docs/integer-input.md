@@ -24,5 +24,6 @@ A modified number input that only accepts whole (int) numbers, a common annoyanc
 |.wrapper|`outline`|`--integer-input-wrapper-outline`|`none`|`focus`, `focus-within`|
 |input|`border`|`--integer-input-border`|`none`|all|
 |input|`color`|`--integer-input-color`|`initial`|all|
+|input|`background`|`--integer-input-background`|`initial`|all|
 |input|`font-size`|`--integer-input-font-size`|`1rem`|all|
 |input|`outline`|`--integer-input-outline`|`none`|`focus`, `focus-within`|

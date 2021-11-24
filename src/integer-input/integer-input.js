@@ -33,6 +33,7 @@ class IntegerInput extends HTMLElement {
         border: var(--integer-input-border, 1px solid black);
         color: var(--integer-input-color, initial);
         font-size: var(--integer-input-font-size, 1rem);
+        background: var(--integer-input-background, initial);
       }
       input:focus {
         outline: var(--integer-input-outline, none);
