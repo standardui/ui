@@ -64,9 +64,8 @@ Within a bundled project you should be able to use the files as you would expect
 
 ## Components
 
-||Integer Input|
-|-|-|
-|Key|INTEGER_INPUT|
-|Component|{namespace}-integer-input|
-|Description|A modified number input that only accepts whole (int) numbers, a common annoyance of the standard input type=number is that it allows characters such as e, +-, etc, while this is handled in the validations, many developers prefer to not accept invalid inputs in the first place.|
-|CSS Variables and defaults|--integer-input-wrapper-border: none<br/>(focus,focus-within) --integer-input-wrapper-outline: none<br/>(focus,focus-within) --integer-input-wrapper-border: none<br/>(focus) --integer-input-outline: none|
+### Inputs
+
+|Name|Key|Short Description|Docs|
+|-|-|-|-|
+|Integer Input|INTEGER_INPUT|A modified number input that only accepts whole (int) numbers.|[docs](docs/integer-input.md)|
