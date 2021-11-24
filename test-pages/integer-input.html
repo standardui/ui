@@ -10,6 +10,11 @@
               C.INTEGER_INPUT
             ])
         </script>
+        <style>
+          html {
+            font-family: sans-serif;
+          }
+        </style>
     </head>
     <body>
       <form>
@@ -19,6 +24,14 @@
           <testing-integer-input data-testId='integer-input'></testing-integer-input>
           <p>Feature: hideArrows</p>
           <testing-integer-input hideArrows data-testId='integer-input-hideArrows'></testing-integer-input>
+          <p>With some style</p>
+          <testing-integer-input
+            hideArrows
+            data-testId='integer-input-style'
+            style='--integer-input-font-size: 2rem; --integer-input-border: 2px solid maroon; --integer-input-color: rgb(236, 43, 43); --integer-input-background: #131313;'
+          ></testing-integer-input>
+          <p>Max 50</p>
+          <testing-integer-input max='50' data-testId='integer-input-max50'></testing-integer-input>
         </div>
       </form>
 
