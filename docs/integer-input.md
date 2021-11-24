@@ -12,7 +12,7 @@ A modified number input that only accepts whole (int) numbers, a common annoyanc
 <details>
   <summary>How do I hide the up/down arrows</summary>
 
-  Add the attribute hideArrows to the component.
+    Add the attribute hideArrows to the component.
 </details>
 
 ## CSS Variables
