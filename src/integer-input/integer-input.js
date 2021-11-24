@@ -93,6 +93,12 @@ class IntegerInput extends HTMLElement {
     const underlyingInput = this.shadowRoot.querySelector('input')
     underlyingInput.setAttribute('min', this.min)
     underlyingInput.setAttribute('max', this.max)
+    if (this.hasAttribute('stylesheet')) {
+      const style = document.createElement('link')
+      style.setAttribute('rel', 'stylesheet')
+      style.setAttribute('href', this.getAttribute('stylesheet'))
+      this.shadowRoot.appendChild(style)
+    }
     if (this.hasAttribute('value')) {
       this.setValue(this.getAttribute('value'))
       underlyingInput.setAttribute('value', this.getAttribute('value'))

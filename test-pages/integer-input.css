@@ -1,0 +1,5 @@
+/* Lets add the ability to pass custom stylesheets through to our inputs */
+input {
+  background: hotpink;
+  color: indigo;
+}
