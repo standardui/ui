@@ -26,7 +26,7 @@ class IntegerInput extends HTMLElement {
     const style = document.createElement('style')
     style.innerHTML = `
       html {
-        font-size: var(--integer-input-font-size, 16px);
+        font-size: var(--html-font-size, 16px);
       }
 
       input {
@@ -34,9 +34,16 @@ class IntegerInput extends HTMLElement {
         color: var(--integer-input-color, initial);
         font-size: var(--integer-input-font-size, 1rem);
       }
+      input:focus {
+        outline: var(--integer-input-outline, none);
+      }
 
       .wrapper {
-        border: var(--integer-input-border, none);
+        border: var(--integer-input-wrapper-border, none);
+      }
+      .wrapper:focus, .wrapper:focus-within {
+        outline: var(--integer-input-wrapper-outline, none);
+        border: var(--integer-input-wrapper-focus-border, none);
       }
     `
 
@@ -68,10 +75,6 @@ class IntegerInput extends HTMLElement {
       this.setValue(this.getAttribute('value'))
     } else {
       this.setValue(0)
-    }
-
-    if (!this.hasAttribute('contenteditable')) {
-      this.setAttribute('contenteditable', true)
     }
   }
 
