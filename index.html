@@ -2,9 +2,12 @@
 <html>
     <head>
         <script type='module'>
-            import registerUi from './src/main.js'
+            import { COMPONENTS as C, registerComponents } from './src/main.js'
 
-            registerUi('testing')
+            // registerUi('testing')
+            registerComponents('testing', [
+              C.INTEGER_INPUT
+            ])
         </script>
     </head>
     <body>
