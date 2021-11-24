@@ -122,10 +122,10 @@ class IntegerInput extends HTMLElement {
     if (this.underlyingInput.value.match('e')) {
       this.underlyingInput.value.replace('e', '')
     }
-    let value = this.underlyingInput.value
-    if (value > this.max) {
-      value = this.max
-      this.underlyingInput.value = this.max
+    let value = parseInt(this.underlyingInput.value)
+    if (value > parseInt(this.max)) {
+      value = parseInt(this.max)
+      this.underlyingInput.value = parseInt(this.max)
     }
     this.setValue(this.underlyingInput.value)
   }
