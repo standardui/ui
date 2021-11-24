@@ -25,43 +25,34 @@ jobs:
           config: baseUrl=http://localhost:8080
           build: npx cypress info
 
-  # basic-on-windows:
-  #   runs-on: windows-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
+  basic-on-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm install
+      - name: Cypress tests
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          wait-on: 'http://localhost:8080'
+          config: baseUrl=http://localhost:8080
+          build: npx cypress info
 
-  #     - name: Cypress tests
-  #       uses: cypress-io/github-action@v2
-  #       with:
-  #         build: npx cypress info
-
-  # basic-on-mac:
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-
-  #     - name: Cypress tests
-  #       uses: cypress-io/github-action@v2
-  #       with:
-  #         build: npx cypress info
-
-  # skips the binary installation
-  # shows that the job should not fail
-  # https://github.com/cypress-io/github-action/issues/327
-  # basic-without-binary-install:
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-
-  #     - name: Cypress tests
-  #       uses: cypress-io/github-action@v2
-  #       with:
-  #         # since we do not install Cypress
-  #         # we should not attempt to run tests
-  #         runTests: false
-  #       env:
-  #         # skip the binary install
-  #         CYPRESS_INSTALL_BINARY: 0
+  basic-on-mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - run: npm install
+      - name: Cypress tests
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm start
+          wait-on: 'http://localhost:8080'
+          config: baseUrl=http://localhost:8080
+          build: npx cypress info
