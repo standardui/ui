@@ -45,6 +45,18 @@ class IntegerInput extends HTMLElement {
         outline: var(--integer-input-wrapper-outline, none);
         border: var(--integer-input-wrapper-focus-border, none);
       }
+
+      /* Feature: Hide Arrows */
+      .hideArrows::-webkit-outer-spin-button,
+      .hideArrows::-webkit-inner-spin-button
+      {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      .hideArrows {
+        -moz-appearance: textfield;
+      }
     `
 
     // Sets and returns this.shadowRoot
@@ -57,6 +69,15 @@ class IntegerInput extends HTMLElement {
     underlyingInput.setAttribute('type', 'number')
     this.underlyingInput = underlyingInput
     wrapper.appendChild(underlyingInput)
+    if (this.hasAttribute('hideArrows')) {
+      underlyingInput.classList.add('hideArrows')
+    }
+    if (this.hasAttribute('classes')) {
+      const classes = this.getAttribute('classes').split(' ')
+      classes.forEach(className => {
+        wrapper.classList.add(className)
+      })
+    }
 
     this.shadowRoot.appendChild(style)
     this.shadowRoot.appendChild(wrapper)
