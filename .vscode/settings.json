@@ -1,0 +1,10 @@
+{
+  "standard.options": {
+    "globals": [
+      "describe",
+      "cy",
+      "it",
+      "beforeEach",
+    ]
+  }
+}
