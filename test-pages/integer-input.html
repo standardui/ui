@@ -12,6 +12,8 @@
         </script>
         <style>
           html {
+            background: #ececec;
+            color: #131313;
             font-family: sans-serif;
           }
         </style>
@@ -31,7 +33,9 @@
             style='--integer-input-font-size: 2rem; --integer-input-border: 2px solid maroon; --integer-input-color: rgb(236, 43, 43); --integer-input-background: #131313;'
           ></testing-integer-input>
           <p>Max 50</p>
-          <testing-integer-input max='50' data-testId='integer-input-max50'></testing-integer-input>
+          <testing-integer-input value='49' max='50' data-testId='integer-input-max50'></testing-integer-input>
+          <p>Min 50</p>
+          <testing-integer-input value='50' min='50' data-testId='integer-input-max50'></testing-integer-input>
         </div>
       </form>
 
