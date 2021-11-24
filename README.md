@@ -19,6 +19,10 @@ An example of how you can use this package standalone can be seen in this projec
 <script type='module'>
   import registerUi from './src/main.js';
 
+  /* this registers all components into the 'testing' namespace, ie:
+    <testing-integer-input></testing-integer-input>
+    use whatever namespace you would like for your brand.
+  */
   registerUi('testing');
 </script>
 ````
