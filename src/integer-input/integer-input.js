@@ -95,6 +95,7 @@ class IntegerInput extends HTMLElement {
     underlyingInput.setAttribute('max', this.max)
     if (this.hasAttribute('value')) {
       this.setValue(this.getAttribute('value'))
+      underlyingInput.setAttribute('value', this.getAttribute('value'))
     } else {
       this.setValue(0)
     }
