@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Cypress tests
-        uses: ./
+        uses: cypress-io/github-action@v2
         with:
           start: npm start
           wait-on: 'http://localhost:8080'
@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Cypress tests
-        uses: ./
+        uses: cypress-io/github-action@v2
         with:
           build: npx cypress info
 
@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Cypress tests
-        uses: ./
+        uses: cypress-io/github-action@v2
         with:
           build: npx cypress info
 
@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Cypress tests
-        uses: ./
+        uses: cypress-io/github-action@v2
         with:
           # since we do not install Cypress
           # we should not attempt to run tests
