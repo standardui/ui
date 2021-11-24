@@ -1,11 +1,11 @@
-import CurrencyInput from './currency-input/currency-input.js'
+// import CurrencyInput from './currency-input/currency-input.js'
 import IntegerInput from './integer-input/integer-input.js'
 
 export const COMPONENTS = {
-  CURRENCY_INPUT: {
-    name: 'currency-input',
-    component: CurrencyInput
-  },
+  // CURRENCY_INPUT: {
+  //   name: 'currency-input',
+  //   component: CurrencyInput
+  // },
   INTEGER_INPUT: {
     name: 'integer-input',
     component: IntegerInput
@@ -13,7 +13,7 @@ export const COMPONENTS = {
 }
 
 const components = [
-  COMPONENTS.CURRENCY_INPUT,
+  // COMPONENTS.CURRENCY_INPUT,
   COMPONENTS.INTEGER_INPUT
 ]
 
