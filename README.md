@@ -20,7 +20,7 @@ NOTE: One thing to remember about custom components is they ***must*** always ha
 
 ### Standalone usage
 
-An example of how you can use this package standalone can be seen in this projects index.html, firstly a script tag with type module to import main.js
+An example of how you can use this package standalone can be seen in this projects index.html, firstly a script tag with type module to import main.js, then you can register all components at once with the following:
 
 ````html
 <script type='module'>
@@ -34,7 +34,7 @@ An example of how you can use this package standalone can be seen in this projec
 </script>
 ````
 
-Or to register only specific components you can use the following
+Or to register only specific components you can use:
 ````html
 <script type='module'>
   import { COMPONENTS as C, registerComponents } from './src/main.js';
