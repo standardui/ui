@@ -2,3 +2,4 @@ index.html
 .editorconfig
 .gitignore
 cypress/
+.github/
