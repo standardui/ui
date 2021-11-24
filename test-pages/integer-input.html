@@ -16,26 +16,59 @@
             color: #131313;
             font-family: sans-serif;
           }
+
+          .examples {
+            display: grid;
+          }
+          @media screen and (min-width: 600px) {
+            .examples { grid-template-columns: repeat(2, 1fr); }
+          }
+          @media screen and (min-width: 1000px) {
+            .examples { grid-template-columns: repeat(3, 1fr); }
+          }
+          .example { margin-bottom: 1em; }
+          .example p { margin: 0 0 0.25em 0; }
         </style>
     </head>
     <body>
       <form>
         <div id='integer-input'>
           <h1>Integer Input</h1>
-          <p>This one has no styling</p>
-          <testing-integer-input data-testId='integer-input'></testing-integer-input>
-          <p>Feature: hideArrows</p>
-          <testing-integer-input hideArrows data-testId='integer-input-hideArrows'></testing-integer-input>
-          <p>With some style</p>
-          <testing-integer-input
-            hideArrows
-            data-testId='integer-input-style'
-            style='--integer-input-font-size: 2rem; --integer-input-border: 2px solid maroon; --integer-input-color: rgb(236, 43, 43); --integer-input-background: #131313;'
-          ></testing-integer-input>
-          <p>Max 50</p>
-          <testing-integer-input value='49' max='50' data-testId='integer-input-max50'></testing-integer-input>
-          <p>Min 50</p>
-          <testing-integer-input value='50' min='50' data-testId='integer-input-max50'></testing-integer-input>
+          <div class='examples'>
+            <div class='example'>
+              <p>This one has no styling</p>
+              <testing-integer-input data-testId='integer-input'></testing-integer-input>
+            </div>
+
+            <div class='example'>
+              <p>Feature: hideArrows</p>
+              <testing-integer-input hideArrows data-testId='integer-input-hideArrows'></testing-integer-input>
+            </div>
+
+            <div class='example'>
+              <p>With some style</p>
+              <testing-integer-input
+                hideArrows
+                data-testId='integer-input-style'
+                style='--integer-input-font-size: 2rem; --integer-input-border: 2px solid maroon; --integer-input-color: rgb(236, 43, 43); --integer-input-background: #131313;'
+              ></testing-integer-input>
+            </div>
+
+            <div class='example'>
+              <p>Max 50</p>
+            <testing-integer-input value='49' max='50' data-testId='integer-input-max50'></testing-integer-input>
+            </div>
+
+            <div class='example'>
+              <p>Min 50</p>
+              <testing-integer-input value='50' min='50' data-testId='integer-input-min50'></testing-integer-input>
+            </div>
+
+            <div class='example'>
+              <p>With a stylesheet</p>
+              <testing-integer-input stylesheet='./integer-input.css' data-testId='integer-input-stylesheet'></testing-integer-input>
+            </div>
+          </div>
         </div>
       </form>
 
