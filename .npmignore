@@ -3,3 +3,4 @@ index.html
 .gitignore
 cypress/
 .github/
+.vscode/
