@@ -1,0 +1,15 @@
+{
+  "name": "@standardui/ui",
+  "version": "1.0.0",
+  "description": "A set of reusable modern custom elements (web components).",
+  "main": "index.js",
+  "scripts": {
+    "start": "snowpack dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "cypress": "^9.0.0"
+  }
+}
