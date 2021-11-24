@@ -7,7 +7,7 @@ class IntegerInput extends HTMLElement {
   static formAssociated = true
 
   static get observedAttributes () {
-    return ['min', 'max']
+    return ['min', 'max', 'value']
   }
 
   attributeChangedCallback (name, oldValue, newValue) {
@@ -18,9 +18,9 @@ class IntegerInput extends HTMLElement {
   constructor () {
     super()
     this.internals = this.attachInternals()
-    this.setValue(0)
     this._onChange = this._onChange.bind(this)
     this.setValue = this.setValue.bind(this)
+    this.setValue(0)
 
     /* Set default styles */
     const style = document.createElement('style')
@@ -64,6 +64,15 @@ class IntegerInput extends HTMLElement {
     const underlyingInput = this.shadowRoot.querySelector('input')
     underlyingInput.setAttribute('min', this.min)
     underlyingInput.setAttribute('max', this.max)
+    if (this.hasAttribute('value')) {
+      this.setValue(this.getAttribute('value'))
+    } else {
+      this.setValue(0)
+    }
+
+    if (!this.hasAttribute('contenteditable')) {
+      this.setAttribute('contenteditable', true)
+    }
   }
 
   _preventDisallowed (e) {
@@ -73,7 +82,15 @@ class IntegerInput extends HTMLElement {
   }
 
   setValue(value) {
-    this.internals.setFormValue(value)
+    this.value = value
+  }
+
+  set value(newValue) {
+    this.internals.setFormValue(newValue)
+  }
+
+  get value() {
+    return this.underlyingInput.value || '0'
   }
 
   _onChange () {
