@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Currency Input</title>
+        <script type='module'>
+            import { COMPONENTS as C, registerComponents } from '../../src/main.js'
+
+            // registerUi('testing')
+            registerComponents('testing', [
+              C.CURRENCY_INPUT
+            ])
+        </script>
+        <style>
+          html {
+            background: #ececec;
+            color: #131313;
+            font-family: sans-serif;
+          }
+
+          .examples {
+            display: grid;
+          }
+          @media screen and (min-width: 600px) {
+            .examples { grid-template-columns: repeat(2, 1fr); }
+          }
+          @media screen and (min-width: 1000px) {
+            .examples { grid-template-columns: repeat(3, 1fr); }
+          }
+          .example { margin-bottom: 1em; }
+          .example p { margin: 0 0 0.25em 0; }
+        </style>
+    </head>
+    <body>
+
+      <form id='currencyInputForm'>
+        <div id='currency-input'>
+          <h1>Currency Input</h1>
+          <div class='examples'>
+            <div class='example'>
+              <p>This one has no styling</p>
+              <testing-currency-input name='no-styling' data-testId='integer-input'></testing-currency-input>
+            </div>
+
+            <div class='example'>
+              <p>Feature: hideArrows</p>
+              <testing-currency-input name='hide-arrows' hideArrows data-testId='integer-input-hideArrows'></testing-currency-input>
+            </div>
+
+            <div class='example'>
+              <p>With some style</p>
+              <testing-currency-input
+                name='with-style'
+                hideArrows
+                data-testId='integer-input-style'
+                style='--integer-input-font-size: 2rem; --integer-input-border: 2px solid maroon; --integer-input-color: rgb(236, 43, 43); --integer-input-background: #131313;'
+              ></testing-currency-input>
+            </div>
+
+            <div class='example'>
+              <p>Max 50</p>
+              <testing-currency-input name='max-50' value='49' max='50' data-testId='currency-input-max50'></testing-currency-input>
+            </div>
+
+            <div class='example'>
+              <p>Min 50</p>
+              <testing-currency-input name='min-50' value='50' min='50' data-testId='currency-input-min50'></testing-currency-input>
+            </div>
+
+            <div class='example'>
+              <p>Max 50 Max Decimal 99</p>
+              <testing-currency-input name='min-50' value='50' max='50' maxDecimal='99' data-testId='currency-input-min50'></testing-currency-input>
+            </div>
+
+            <div class='example'>
+              <p>With Value in Float range</p>
+              <testing-currency-input name='float-value' value='50.20' max='50' maxDecimal='99' data-testId='currency-input-min50'></testing-currency-input>
+            </div>
+
+            <div class='example'>
+              <p>With a stylesheet</p>
+              <testing-currency-input max='9999' maxDecimal='99' hideArrows name='with-stylesheet' stylesheet='./currency-input.css' data-testId='currency-input-stylesheet'></testing-currency-input>
+            </div>
+          </div>
+        </div>
+
+        <button>Submit</button>
+      </form>
+
+      <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault()
+          new FormData(e.target)
+        })
+
+        // FormData event is sent on <form> submission, before transmission.
+        // The event has a formData property
+        form.addEventListener('formdata', ({formData}) => {
+          // Display the values
+          const data = {}
+
+
+          for (var pair of formData.entries()) {
+            data[pair[0]] = pair[1]
+          }
+
+          console.table(data)
+        });
+      </script>
+    </body>
+</html>

@@ -1,8 +1,8 @@
 export const COMPONENTS = {
-  // CURRENCY_INPUT: {
-  //   name: 'currency-input',
-  //   path: './currency-input/currency-input.js'
-  // },
+  CURRENCY_INPUT: {
+    name: 'currency-input',
+    path: './currency-input/currency-input.js'
+  },
   INTEGER_INPUT: {
     name: 'integer-input',
     path: './integer-input/integer-input.js'
@@ -10,7 +10,7 @@ export const COMPONENTS = {
 }
 
 const components = [
-  // COMPONENTS.CURRENCY_INPUT,
+  COMPONENTS.CURRENCY_INPUT,
   COMPONENTS.INTEGER_INPUT
 ]
 

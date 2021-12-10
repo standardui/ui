@@ -1,0 +1,13 @@
+/* Lets add the ability to pass custom stylesheets through to our inputs */
+.wrapper {
+  max-width: fit-content;
+  background-color: #504e4d;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  max-width: max-content;
+}
+
