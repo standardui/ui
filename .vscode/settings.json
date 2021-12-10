@@ -1,10 +1,12 @@
 {
+  "standard.engine": "standard",
   "standard.options": {
     "globals": [
       "describe",
       "cy",
       "it",
       "beforeEach",
+      "HTMLElement",
     ]
   }
 }
