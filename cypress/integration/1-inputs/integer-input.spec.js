@@ -7,8 +7,8 @@ describe('integer-input', () => {
     cy.visit('/test-pages/integer-input.html')
   })
 
-  it('starts with a value of zero', () => {
-    cy.get(selector).should('have.value', '0')
+  it('starts with an empty value', () => {
+    cy.get(selector).should('have.value', '')
   })
 
   it('has a value of 1 if we type 1', () => {

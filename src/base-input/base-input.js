@@ -8,7 +8,6 @@ class BaseInput extends BaseComponent {
     super()
     this.internals = this.attachInternals()
     this.setValue = this.setValue.bind(this)
-    this.setValue(this.getAttribute('value') || '0')
   }
 
   set value (newValue) {

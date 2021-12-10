@@ -80,6 +80,14 @@ class IntegerInput extends BaseInput {
     this.shadowRoot.appendChild(wrapper)
   }
 
+  set value (value) {
+    //
+  }
+
+  get value () {
+    return this.underlyingInput.value
+  }
+
   connectedCallback () {
     super.connectedCallback()
     this.shadowRoot.querySelectorAll('input').forEach(input => {
