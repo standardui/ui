@@ -82,6 +82,7 @@ class CurrencyInput extends BaseInput {
 
     const divisor = document.createElement('span')
     divisor.innerText = this.separator
+    divisor.classList.add('separator')
     wrapper.appendChild(divisor)
 
     const decimalInput = document.createElement('input')
@@ -196,6 +197,7 @@ class CurrencyInput extends BaseInput {
 
     switch (e.key) {
       case '.':
+      case ',':
         decimalInput.focus()
         break
       default:

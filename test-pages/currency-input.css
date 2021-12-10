@@ -11,3 +11,11 @@ input {
   max-width: max-content;
 }
 
+.symbol {
+  font-weight: bold;
+}
+
+.separator {
+  font-weight: bold;
+}
+
