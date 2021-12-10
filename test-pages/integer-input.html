@@ -31,13 +31,14 @@
         </style>
     </head>
     <body>
-      <form>
+
+      <form id='integerInputForm'>
         <div id='integer-input'>
           <h1>Integer Input</h1>
           <div class='examples'>
             <div class='example'>
               <p>This one has no styling</p>
-              <testing-integer-input data-testId='integer-input'></testing-integer-input>
+              <testing-integer-input name='no-styling' data-testId='integer-input'></testing-integer-input>
             </div>
 
             <div class='example'>
@@ -56,7 +57,7 @@
 
             <div class='example'>
               <p>Max 50</p>
-            <testing-integer-input value='49' max='50' data-testId='integer-input-max50'></testing-integer-input>
+              <testing-integer-input name='max-50' value='49' max='50' data-testId='integer-input-max50'></testing-integer-input>
             </div>
 
             <div class='example'>
@@ -70,7 +71,31 @@
             </div>
           </div>
         </div>
+
+        <button>Submit</button>
       </form>
 
+      <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', (e) => {
+          e.preventDefault()
+          new FormData(e.target)
+        })
+
+        // FormData event is sent on <form> submission, before transmission.
+        // The event has a formData property
+        form.addEventListener('formdata', ({formData}) => {
+          // Display the values
+          const data = {}
+
+
+          for (var pair of formData.entries()) {
+            data[pair[0]] = pair[1]
+          }
+
+          console.table(data)
+        });
+      </script>
     </body>
 </html>
