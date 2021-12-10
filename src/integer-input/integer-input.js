@@ -1,10 +1,9 @@
+import BaseInput from "../base-input/base-input.js"
 import preventDisallowed from "../mixins/prevent-disallowed.js"
 
-class IntegerInput extends HTMLElement {
+class IntegerInput extends BaseInput {
   max = 999999999999
   min = 0
-
-  static formAssociated = true
 
   static get observedAttributes () {
     return ['min', 'max', 'value']
@@ -17,10 +16,7 @@ class IntegerInput extends HTMLElement {
 
   constructor () {
     super()
-    this.internals = this.attachInternals()
     this._onChange = this._onChange.bind(this)
-    this.setValue = this.setValue.bind(this)
-    this.setValue(0)
 
     /* Set default styles */
     const style = document.createElement('style')
@@ -61,7 +57,7 @@ class IntegerInput extends HTMLElement {
     `
 
     // Sets and returns this.shadowRoot
-    this.attachShadow({ mode: 'open' })
+    // this.attachShadow({ mode: 'open' })
 
     const wrapper = document.createElement('div')
     wrapper.classList.add('wrapper')
@@ -85,6 +81,7 @@ class IntegerInput extends HTMLElement {
   }
 
   connectedCallback () {
+    super.connectedCallback()
     this.shadowRoot.querySelectorAll('input').forEach(input => {
       input.addEventListener('input', this._onChange)
       input.addEventListener('keydown', this._preventDisallowed)
@@ -93,12 +90,6 @@ class IntegerInput extends HTMLElement {
     const underlyingInput = this.shadowRoot.querySelector('input')
     underlyingInput.setAttribute('min', this.min)
     underlyingInput.setAttribute('max', this.max)
-    if (this.hasAttribute('stylesheet')) {
-      const style = document.createElement('link')
-      style.setAttribute('rel', 'stylesheet')
-      style.setAttribute('href', this.getAttribute('stylesheet'))
-      this.shadowRoot.appendChild(style)
-    }
     if (this.hasAttribute('value')) {
       this.setValue(this.getAttribute('value'))
       underlyingInput.setAttribute('value', this.getAttribute('value'))
@@ -111,18 +102,6 @@ class IntegerInput extends HTMLElement {
     preventDisallowed(e)
     // As this is an integer input, lets disallow the decimal point.
     preventDisallowed(e, ['NumpadDecimal', 'Period'])
-  }
-
-  setValue(value) {
-    this.value = value
-  }
-
-  set value(newValue) {
-    this.internals.setFormValue(newValue)
-  }
-
-  get value() {
-    return this.underlyingInput.value || '0'
   }
 
   _onChange () {
