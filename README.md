@@ -38,6 +38,7 @@ Or to register only specific components you can use:
 ````html
 <script type='module'>
   import { COMPONENTS as C, registerComponents } from './src/main.js';
+  const namespace = 'testing'
 
   /* this registers all components into the 'testing' namespace, ie:
     <testing-integer-input></testing-integer-input>
@@ -48,9 +49,6 @@ Or to register only specific components you can use:
     C.COMPONENT_TWO,
     ...
   ])
-
-  /* alternatively to register specific components you can do the following
-  */
 </script>
 ````
 
