@@ -25,22 +25,6 @@ jobs:
           config: baseUrl=http://localhost:8080
           build: npx cypress info
 
-  basic-on-windows:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-      - run: npm install
-      - name: Cypress tests
-        uses: cypress-io/github-action@v2
-        with:
-          start: npm start
-          wait-on: 'http://localhost:8080'
-          config: baseUrl=http://localhost:8080
-          build: npx cypress info
-
   basic-on-mac:
     runs-on: macos-latest
     steps:
