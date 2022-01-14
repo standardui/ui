@@ -52,8 +52,6 @@ Or to register only specific components you can use:
 </script>
 ````
 
-TODO: Later we will add a method to register only desired components, see readme update at that time for details.
-
 Note: This approach is supported on all modern browsers except some mobile ones https://caniuse.com/es6-module - you may have to decide if this is acceptable to your project.
 
 ### Usage with frameworks
