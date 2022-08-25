@@ -3,6 +3,7 @@
   "version": "0.0.1-alpha.1",
   "description": "A set of reusable modern custom elements (web components).",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "snowpack dev",
     "test": "npx cypress open"
